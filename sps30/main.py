@@ -1,4 +1,3 @@
-
 from sps30 import SPS30
 
 
@@ -11,5 +10,5 @@ def main():
     print(f"Firmware version: V{firmware_version[0]}.{firmware_version[1]}")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

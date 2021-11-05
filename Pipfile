@@ -5,10 +5,11 @@ name = "pypi"
 
 [packages]
 pyserial = "*"
-sphinx = "*"
 
 [dev-packages]
+sphinx = "*"
 sphinx-rtd-theme = "*"
+black = "*"
 
 [requires]
 python_version = "3.8"
