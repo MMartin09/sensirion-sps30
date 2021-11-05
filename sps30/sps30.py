@@ -7,21 +7,32 @@ import serial
 
 
 class SPS30:
-    """
-
-    Args:
-        port (str): Serial port of the SPS30
+    """Sensirion SPS30.
 
     Attributes:
-        port (str): Serial port of the SPS30
+        port (str): Serial port of the SPS30.
 
     """
 
     def __init__(self, port):
+        """
+
+        Args:
+            port (str): Serial port of the SPS30.
+
+        """
+
         self.port: str = port
         self.conn = serial.Serial(self.port, baudrate=115200, stopbits=1, parity="N")
 
     def read_firmware_version(self) -> Tuple[int, int]:
+        """Reads firmware version of the sensor.
+
+        Returns:
+            Firmware version as tuple (major, minor).
+
+        """
+
         self.conn.reset_input_buffer()
 
         self.conn.write([0x7E, 0x00, 0xD1, 0x00, 0x2E, 0x7E])
@@ -52,4 +63,3 @@ class SPS30:
         firmware_minor: int = data[1]
 
         return firmware_major, firmware_minor
-
