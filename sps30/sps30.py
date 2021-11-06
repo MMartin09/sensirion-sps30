@@ -54,17 +54,8 @@ class SPS30:
 
         raw_data = self.conn.read(in_bytes)
 
-        if b"\x7D\x5E" in raw_data:
-            raw_data = raw_data.replace(b"\x7D\x5E", b"\x7E")
-        if b"\x7D\x5D" in raw_data:
-            raw_data = raw_data.replace(b"\x7D\x5D", b"\x7D")
-        if b"\x7D\x31" in raw_data:
-            raw_data = raw_data.replace(b"\x7D\x31", b"\x11")
-        if b"\x7D\x33" in raw_data:
-            raw_data = raw_data.replace(b"\x7D\x33", b"\x13")
-
-        # Head and tail can be removed
-        raw_data = raw_data[5:-2]
+        raw_data = reverse_byte_stuffing(raw_data)
+        raw_data = trim_data(raw_data)
 
         data = struct.unpack(">ffffffffff", raw_data)
 
@@ -89,17 +80,8 @@ class SPS30:
 
         raw_data = self.conn.read(in_bytes)
 
-        if b"\x7D\x5E" in raw_data:
-            raw_data = raw_data.replace(b"\x7D\x5E", b"\x7E")
-        if b"\x7D\x5D" in raw_data:
-            raw_data = raw_data.replace(b"\x7D\x5D", b"\x7D")
-        if b"\x7D\x31" in raw_data:
-            raw_data = raw_data.replace(b"\x7D\x31", b"\x11")
-        if b"\x7D\x33" in raw_data:
-            raw_data = raw_data.replace(b"\x7D\x33", b"\x13")
-
-        # Head and tail can be removed
-        raw_data = raw_data[5:-2]
+        raw_data = reverse_byte_stuffing(raw_data)
+        raw_data = trim_data(raw_data)
 
         # Unpack the raw data
         data = struct.unpack(">bbbbbbb", raw_data)
@@ -108,3 +90,41 @@ class SPS30:
         firmware_minor: int = data[1]
 
         return firmware_major, firmware_minor
+
+
+def reverse_byte_stuffing(raw_data) -> bytes:
+    """Apply reverse byte-stuffing on an input byte string.
+
+    See the documentation for more information.
+
+    Args:
+        raw_data (bytes): Input bytes to be replaced.
+
+    Returns:
+        The input data with reversed byte-stuffed characters.
+
+    """
+
+    if b"\x7D\x5E" in raw_data:
+        raw_data = raw_data.replace(b"\x7D\x5E", b"\x7E")
+    if b"\x7D\x5D" in raw_data:
+        raw_data = raw_data.replace(b"\x7D\x5D", b"\x7D")
+    if b"\x7D\x31" in raw_data:
+        raw_data = raw_data.replace(b"\x7D\x31", b"\x11")
+    if b"\x7D\x33" in raw_data:
+        raw_data = raw_data.replace(b"\x7D\x33", b"\x13")
+
+    return raw_data
+
+
+def trim_data(raw_data) -> bytes:
+    """Removes head and tail from byte string.
+
+    Args:
+        raw_data: Input bytes to be trimmed.
+
+    Returns:
+        Trimmed data string.
+    """
+
+    return raw_data[5:-2]
