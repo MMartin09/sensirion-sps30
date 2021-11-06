@@ -24,6 +24,52 @@ class SPS30:
         self.port: str = port
         self.conn = serial.Serial(self.port, baudrate=115200, stopbits=1, parity="N")
 
+    def start_measurement(self) -> None:
+        """Starts the measurement."""
+        self.conn.write([0x7E, 0x00, 0x00, 0x02, 0x01, 0x03, 0xF9, 0x7E])
+
+    def stop_measurement(self) -> None:
+        """Stops the measurement."""
+        self.conn.write([0x7E, 0x00, 0x01, 0x00, 0xFE, 0x7E])
+
+    def read_values(self) -> Tuple:
+        """Reads the measured values.
+
+        The output data structure consists of 10 big-endian float IEEE754 values.
+        For further information see the documentation.
+
+        Returns:
+            The read values.
+
+        """
+
+        self.conn.reset_input_buffer()
+
+        self.conn.write([0x7E, 0x00, 0x03, 0x00, 0xFC, 0x7E])
+
+        in_bytes = self.conn.in_waiting
+        while in_bytes < 47:
+            in_bytes = self.conn.in_waiting
+            time.sleep(0.1)
+
+        raw_data = self.conn.read(in_bytes)
+
+        if b"\x7D\x5E" in raw_data:
+            raw_data = raw_data.replace(b"\x7D\x5E", b"\x7E")
+        if b"\x7D\x5D" in raw_data:
+            raw_data = raw_data.replace(b"\x7D\x5D", b"\x7D")
+        if b"\x7D\x31" in raw_data:
+            raw_data = raw_data.replace(b"\x7D\x31", b"\x11")
+        if b"\x7D\x33" in raw_data:
+            raw_data = raw_data.replace(b"\x7D\x33", b"\x13")
+
+        # Head and tail can be removed
+        raw_data = raw_data[5:-2]
+
+        data = struct.unpack(">ffffffffff", raw_data)
+
+        return data
+
     def read_firmware_version(self) -> Tuple[int, int]:
         """Reads firmware version of the sensor.
 
