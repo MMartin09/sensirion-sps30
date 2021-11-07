@@ -91,6 +91,38 @@ class SPS30:
 
         return firmware_major, firmware_minor
 
+    def read_status_register(self) -> int:
+        """Read the status register of the device.
+
+        For further information about the status register, see the documentation.
+
+        Returns:
+            Current status register as 32bit unsigned integer.
+
+        """
+
+        self.conn.reset_input_buffer()
+
+        self.conn.write([0x7E, 0x00, 0xD2, 0x01, 0x00, 0x2C, 0x7E])
+
+        in_bytes = self.conn.in_waiting
+        while in_bytes < 12:
+            in_bytes = self.conn.in_waiting
+            time.sleep(0.1)
+
+        raw_data = self.conn.read(in_bytes)
+
+        raw_data = reverse_byte_stuffing(raw_data)
+        raw_data = trim_data(raw_data)
+
+        # Unpack the raw data
+        data = struct.unpack(">Ib", raw_data)
+
+        # Extract the register (Byte 4 is unused)
+        register: int = data[0]
+
+        return register
+
 
 def reverse_byte_stuffing(raw_data) -> bytes:
     """Apply reverse byte-stuffing on an input byte string.
