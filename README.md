@@ -11,11 +11,11 @@ from time import sleep
 
 from sps30 import SPS30
 
-port: str = "COM3"   # Serial port of the sensor
+port: str = "COM3"
 sps30 = SPS30(port)
 
 sps30.start_measurement()
-sleep(1.5)           # Wait until the sensor is ready
+sleep(5)
 
 data = sps30.read_values()
 print(data)

@@ -2,12 +2,15 @@ from typing import Dict
 
 
 def parse_status_register(register) -> Dict[str, int]:
-    """Parse the status register.
+    """Parse the status register into a dict.
 
-    Extract bits containing information and set them in a dictionary.
-    The dictionary is returned by the function.
+    Args:
+        register (int): Status register as 32 bit unsigned integer.
 
-    Extracted bits:
+    Returns:
+        Register bits as a dictionary.
+
+    **Keys:**
 
         * fan_speed: Bit 21
         * laser_failure: Bit 5
@@ -15,12 +18,6 @@ def parse_status_register(register) -> Dict[str, int]:
 
     Please note, `fan_failure` and `laser_failure` are Errors and `fan_speed` a Warning.
     For further information see the documentation.
-
-    Args:
-        register (int): Status register as 32 bit unsigned integer.
-
-    Returns:
-        Register bits as a dictionary.
 
     """
 
