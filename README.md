@@ -1,6 +1,8 @@
 # Sensirion SPS30 PM Sensor
 
-[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/MMartin09/sensirion-sps30/lint?style=flat-square)
+![GitHub](https://img.shields.io/github/license/MMartin09/sensirion-sps30)
+[![style black](https://img.shields.io/badge/Style-Black-black.svg?style=flat-square)](https://github.com/ambv/black)
 
 ## Usage
 
