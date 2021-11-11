@@ -40,7 +40,7 @@ copyright = "2021, MMartin09"
 author = "MMartin09"
 
 # The full version, including alpha/beta/rc tags
-release = get_version("../sps30/__init__.py")
+release = get_version("../sensirion_sps30/__init__.py")
 
 
 # -- General configuration ---------------------------------------------------

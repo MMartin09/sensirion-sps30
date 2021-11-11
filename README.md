@@ -11,7 +11,7 @@ Example Python script to read and print a single measurement.
 ```python
 from time import sleep
 
-from sps30 import SPS30
+from sensirion_sps30 import SPS30
 
 port: str = "COM3"
 sps30 = SPS30(port)

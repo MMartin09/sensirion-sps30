@@ -17,7 +17,7 @@ This time is, however, only a recommendation and could be changed if desired.
 
 .. code-block:: python
 
-    from sps30 import SPS30
+    from sensirion_sps30 import SPS30
 
     port: str = "COM3"
     sps30 = SPS30(port=port)
@@ -39,7 +39,7 @@ An example output could be :code:`V2.2`.
 
 .. code-block:: python
 
-    from sps30 import SPS30
+    from sensirion_sps30 import SPS30
 
     port: str = "COM3"
     sps30 = SPS30(port=port)
@@ -58,7 +58,7 @@ This function extracts the import bits of the register and maps them into a dict
 
 .. code-block:: python
 
-    from sps30 import SPS30
+    from sensirion_sps30 import SPS30
 
     port: str = "COM3"
     sps30 = SPS30(port=port)

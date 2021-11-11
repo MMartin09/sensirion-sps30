@@ -2,7 +2,7 @@ import time
 
 from helper import parse_status_register
 
-from sps30 import SPS30
+from sensirion_sps30 import SPS30
 
 
 def main():
@@ -23,15 +23,15 @@ def main():
     status_register = parse_status_register(status_register)
     print(f"Status register: {status_register}")
 
-    # sps30.start_measurement()
+    # sensirion_sps30.start_measurement()
     # time.sleep(3.5)
     #
     # for i in range(10):
-    #     values = sps30.read_values()
+    #     values = sensirion_sps30.read_values()
     #     pretty_print(values)
     #     time.sleep(1)
     #
-    # sps30.stop_measurement()
+    # sensirion_sps30.stop_measurement()
 
 
 def pretty_print(data) -> None:
