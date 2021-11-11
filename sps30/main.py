@@ -10,6 +10,12 @@ def main():
 
     sps30 = SPS30(port=port)
 
+    product_type = sps30.read_product_type()
+    print(f"Product type: {product_type}")
+
+    serial_number = sps30.read_serial_number()
+    print(f"Serial number: {serial_number}")
+
     firmware_version = sps30.read_firmware_version()
     print(f"Firmware version: V{firmware_version[0]}.{firmware_version[1]}")
 

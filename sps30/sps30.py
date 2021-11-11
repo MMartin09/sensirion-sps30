@@ -61,6 +61,52 @@ class SPS30:
 
         return data
 
+    def read_product_type(self) -> str:
+        self.conn.reset_input_buffer()
+
+        self.conn.write([0x7E, 0x00, 0xD0, 0x01, 0x00, 0x2E, 0x7E])
+
+        in_bytes = self.conn.in_waiting
+        while in_bytes < 16:
+            in_bytes = self.conn.in_waiting
+            time.sleep(0.1)
+
+        raw_data = self.conn.read(in_bytes)
+
+        raw_data = reverse_byte_stuffing(raw_data)
+        raw_data = trim_data(raw_data)
+
+        # Remove null character
+        raw_data = raw_data[:-1]
+
+        # Unpack the raw data
+        data = raw_data.decode("ascii")
+
+        return data
+
+    def read_serial_number(self) -> str:
+        self.conn.reset_input_buffer()
+
+        self.conn.write([0x7E, 0x00, 0xD0, 0x01, 0x03, 0x2B, 0x7E])
+
+        in_bytes = self.conn.in_waiting
+        while in_bytes < 24:
+            in_bytes = self.conn.in_waiting
+            time.sleep(0.1)
+
+        raw_data = self.conn.read(in_bytes)
+
+        raw_data = reverse_byte_stuffing(raw_data)
+        raw_data = trim_data(raw_data)
+
+        # Remove null character
+        raw_data = raw_data[:-1]
+
+        # Unpack the raw data
+        data = raw_data.decode("ascii")
+
+        return data
+
     def read_firmware_version(self) -> Tuple[int, int]:
         """Reads firmware version of the sensor.
 
