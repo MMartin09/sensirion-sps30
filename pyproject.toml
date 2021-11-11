@@ -1,12 +1,20 @@
 [tool.poetry]
 name = "sensirion-sps30"
-version = "0"
+version = "0.1.0"
 description = "Sensirion SPS30 Python library"
 authors = ["MMartin09 <mmartin09@outlook.at>"]
 readme = "README.md"
 homepage = "https://mmartin09.github.io/pm-dashboard"
 repository = "https://github.com/MMartin09/sensirion-sps30"
 license = "MIT"
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: Scientific/Engineering :: Atmospheric Science",
+    "Topic :: Terminals :: Serial",
+]
 
 [tool.poetry.dependencies]
 pyserial = "^3.5"
