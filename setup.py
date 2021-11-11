@@ -23,14 +23,14 @@ def get_version(rel_path):
 
 
 setup(
-    name="sensirion-sps30",
-    version=get_version("sps30/__init__.py"),
+    name="sensirion-sensirion_sps30",
+    version=get_version("sensirion_sps30/__init__.py"),
     author="MMartin09",
     author_email="mmartin09@outlook.at",
     description="Sensirion SPS30 Python library",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    packages=["sps30"],
+    packages=["sensirion_sps30"],
     url="https://github.com/MMartin09/sensirion-sps30",
     project_urls={
         "Homepage": "https://mmartin09.github.io/pm-dashboard/",
