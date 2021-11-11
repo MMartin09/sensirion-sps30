@@ -62,6 +62,16 @@ class SPS30:
         return data
 
     def read_product_type(self) -> str:
+        """Reads the product type of the sensor.
+
+        The type of the sensor is always equal to "00080000".
+        If the value is different maybe the wrong port has been selected.
+
+        Returns:
+            Product type as string.
+
+        """
+
         self.conn.reset_input_buffer()
 
         self.conn.write([0x7E, 0x00, 0xD0, 0x01, 0x00, 0x2E, 0x7E])
@@ -85,6 +95,13 @@ class SPS30:
         return data
 
     def read_serial_number(self) -> str:
+        """Reads the serial number of the sensor.
+
+        Returns:
+            Serial number as string with maximal length of 32 ASCII characters.
+
+        """
+
         self.conn.reset_input_buffer()
 
         self.conn.write([0x7E, 0x00, 0xD0, 0x01, 0x03, 0x2B, 0x7E])

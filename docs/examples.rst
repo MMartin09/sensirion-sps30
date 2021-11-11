@@ -3,8 +3,8 @@ Example snippets
 ================
 
 
-Reading measurement value
--------------------------
+Read the sensor value
+---------------------
 
 Start/Stop the measurement and read a single measurement from the sensor.
 For multiple reads, the :code:`read()` function could be called multiple times.

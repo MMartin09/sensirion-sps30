@@ -5,10 +5,10 @@ API
 SPS30 class
 -----------
 
-.. autoclass:: sps30.SPS30
+.. autoclass:: sensirion_sps30.SPS30
     :members:
 
 Helper module
 -------------
 
-.. autofunction:: sps30.helper.parse_status_register
+.. autofunction:: sensirion_sps30.helper.parse_status_register
