@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "sensirion-sps30"
+version = "0"
+description = "Sensirion SPS30 Python library"
+authors = ["MMartin09 <mmartin09@outlook.at>"]
+readme = "README.md"
+homepage = "https://mmartin09.github.io/pm-dashboard"
+repository = "https://github.com/MMartin09/sensirion-sps30"
+license = "MIT"
+
+[tool.poetry.dependencies]
+pyserial = "^3.5"
+
+[tool.poetry.dev-dependencies]
+sphinx = "*"
+sphinx-rtd-theme = "*"
+black = "*"
+isort = "*"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry-version-plugin]
+source = "init"
