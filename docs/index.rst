@@ -10,5 +10,6 @@ Welcome to Sensirion SPS30's documentation!
    :maxdepth: 2
    :caption: Contents
 
+   introduction
    examples
    api

@@ -15,7 +15,7 @@ import os
 import os.path
 import sys
 
-sys.path.insert(0, os.path.abspath("../"))
+sys.path.insert(0, os.path.abspath("../sensirion_sps30"))
 
 
 def read(rel_path):
