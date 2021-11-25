@@ -12,18 +12,23 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
     "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
     "Topic :: Scientific/Engineering :: Atmospheric Science",
     "Topic :: Terminals :: Serial",
 ]
 
 [tool.poetry.dependencies]
+python = "^3.6.1"
 pyserial = "^3.5"
 
 [tool.poetry.dev-dependencies]
 sphinx = "*"
 sphinx-rtd-theme = "*"
-black = "*"
-isort = "*"
+black = {version = "^21.5-beta.1", python = "^3.7"}
+isort = "^5.9.3"
 
 [build-system]
 requires = ["poetry-core"]
@@ -31,3 +36,6 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry-version-plugin]
 source = "init"
+
+[tool.isort]
+profile = "black"
