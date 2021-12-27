@@ -26,3 +26,10 @@ print(data)
 
 sps30.stop_measurement()
 ```
+
+## Contributions
+
+Community contributions are a welcome addition to the project. 
+Before introducing any major features or changes to the existing API please consider opening an [issue](https://github.com/MMartin09/sensirion-sps30/issues) to outline your proposal.
+
+Bug reports are also welcome on the [issue page](https://github.com/MMartin09/sensirion-sps30/issues).
