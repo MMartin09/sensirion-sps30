@@ -25,10 +25,11 @@ python = "^3.6.1"
 pyserial = "^3.5"
 
 [tool.poetry.dev-dependencies]
-sphinx = "*"
-sphinx-rtd-theme = "*"
+sphinx = "^4.3.2"
+sphinx-rtd-theme = "^1.0.0"
 black = {version = "^21.5-beta.1", python = "^3.7"}
 isort = "^5.9.3"
+mypy = "^0.930"
 
 [build-system]
 requires = ["poetry-core"]
