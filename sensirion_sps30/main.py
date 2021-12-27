@@ -1,8 +1,7 @@
 import time
 
-from helper import parse_status_register
-
-from sensirion_sps30 import SPS30
+from sensirion_sps30.helper import parse_status_register
+from sensirion_sps30.sps30 import SPS30
 
 
 def main():

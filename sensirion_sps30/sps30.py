@@ -2,7 +2,7 @@ import struct
 import time
 from typing import Tuple
 
-import serial
+import serial  # type: ignore
 
 
 class SPS30:
