@@ -2,6 +2,9 @@
 Introduction
 ============
 
+**Documentation:** The official documentation of the sever is available under the following link:
+https://www.sensirion.com/fileadmin/user_upload/customers/sensirion/Dokumente/9.6_Particulate_Matter/Datasheets/Sensirion_PM_Sensors_Datasheet_SPS30.pdf
+
 UART communication
 ------------------
 

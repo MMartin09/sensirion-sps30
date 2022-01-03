@@ -6,6 +6,18 @@
 [![style black](https://img.shields.io/badge/Style-Black-black.svg?style=flat-square)](https://github.com/ambv/black)
 [![Imports: isort](https://img.shields.io/badge/%20imports-isort-%231674b1?style=flat-square&labelColor=ef8336)](https://pycqa.github.io/isort/)
 
+## Short description
+
+<a href="https://www.sensirion.com/fileadmin/user_upload/customers/sensirion/Pictures/1_Products/Particulate_Matter/Sensirion_PM_Sensors_SPS30_580x290.png">
+    <img src="https://www.sensirion.com/fileadmin/user_upload/customers/sensirion/Pictures/1_Products/Particulate_Matter/Sensirion_PM_Sensors_SPS30_580x290.png" align="left" height="73" width="145" >
+</a>  
+
+This is a simple library to communicate with a [Sensirion SPS30](https://www.sensirion.com/en/environmental-sensors/particulate-matter-sensors-pm25/) sensor via Serial communication. 
+The SPS30 is an MCERTS-certified particulate matter sensor based on laser scattering measurement principles. 
+It can classify particles within PM1.0, PM2.5, PM4 and PM10 categories. 
+
+For further details refer to the official [documentation](https://www.sensirion.com/fileadmin/user_upload/customers/sensirion/Dokumente/9.6_Particulate_Matter/Datasheets/Sensirion_PM_Sensors_Datasheet_SPS30.pdf) of the sensor.
+
 ## Usage
 
 Example Python script to read and print a single measurement.

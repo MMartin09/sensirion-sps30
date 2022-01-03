@@ -13,11 +13,11 @@ class SPS30:
 
     """
 
-    def __init__(self, port):
+    def __init__(self, port: str):
         """
 
         Args:
-            port (str): Serial port of the SPS30.
+            port: Serial port of the SPS30.
 
         """
 
