@@ -31,6 +31,40 @@ This time is, however, only a recommendation and could be changed if desired.
     sps30.stop_measurement()
 
 
+Read product type
+-----------------
+
+Read the product type.
+
+The type of the sensor is always equal to "00080000".
+If the value is different maybe the wrong port has been selected.
+
+.. code-block:: python
+
+    from sensirion_sps30 import SPS30
+
+    port: str = "COM3"
+    sps30 = SPS30(port=port)
+
+    product_type = sps30.read_product_type()
+    print(f"Product type: {product_type}")
+
+
+Read the serial number
+----------------------
+
+Read the serial number of the sensor.
+The returned string has a maximum length of 32bit.
+
+.. code-block:: python
+
+    from sensirion_sps30 import SPS30
+
+    port: str = "COM3"
+    sps30 = SPS30(port=port)
+
+    serial_number = sps30.read_serial_number()
+    print(f"Serial number: {serial_number}")
 Read the firmware version
 ----------------------------
 

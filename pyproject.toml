@@ -1,29 +1,38 @@
 [tool.poetry]
 name = "sensirion-sps30"
-version = "0.1.0"
+version = "0.2.0"
 description = "Sensirion SPS30 Python library"
 authors = ["MMartin09 <mmartin09@outlook.at>"]
 readme = "README.md"
-homepage = "https://mmartin09.github.io/pm-dashboard"
+homepage = "https://github.com/MMartin09/sensirion-sps30"
 repository = "https://github.com/MMartin09/sensirion-sps30"
 license = "MIT"
 classifiers = [
     "Development Status :: 4 - Beta",
     "License :: OSI Approved :: MIT License",
-    "Operating System :: OS Independent",
     "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Operating System :: OS Independent",
+    "Natural Language :: English",
+    "Intended Audience :: Science/Research",
     "Topic :: Scientific/Engineering :: Atmospheric Science",
     "Topic :: Terminals :: Serial",
 ]
 
 [tool.poetry.dependencies]
+python = "^3.6.1"
 pyserial = "^3.5"
 
 [tool.poetry.dev-dependencies]
-sphinx = "*"
-sphinx-rtd-theme = "*"
-black = "*"
-isort = "*"
+sphinx = "^4.3.2"
+sphinx-rtd-theme = "^1.0.0"
+black = {version = "^21.5-beta.1", python = "^3.7"}
+isort = "^5.9.3"
+mypy = "^0.930"
 
 [build-system]
 requires = ["poetry-core"]
@@ -31,3 +40,6 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry-version-plugin]
 source = "init"
+
+[tool.isort]
+profile = "black"
