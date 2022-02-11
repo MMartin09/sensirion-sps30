@@ -8,15 +8,15 @@
 
 ## Short description
 
-<a href="https://www.sensirion.com/fileadmin/user_upload/customers/sensirion/Pictures/1_Products/Particulate_Matter/Sensirion_PM_Sensors_SPS30_580x290.png">
-    <img src="https://www.sensirion.com/fileadmin/user_upload/customers/sensirion/Pictures/1_Products/Particulate_Matter/Sensirion_PM_Sensors_SPS30_580x290.png" align="left" height="73" width="145" >
+<a href="https://sensirion.com/images/scale/1200x750/com-sensirion-master/portfolio/series/image/4df6fc7a-b697-493b-aa0f-f203ba562e11.png">
+    <img src="https://sensirion.com/images/scale/1200x750/com-sensirion-master/portfolio/series/image/4df6fc7a-b697-493b-aa0f-f203ba562e11.png" align="left" height="73" width="145" >
 </a>  
 
-This is a simple library to communicate with a [Sensirion SPS30](https://www.sensirion.com/en/environmental-sensors/particulate-matter-sensors-pm25/) sensor via Serial communication. 
+This is a simple library to communicate with a [Sensirion SPS30](https://sensirion.com/products/catalog/SPS30/) sensor via Serial communication. 
 The SPS30 is an MCERTS-certified particulate matter sensor based on laser scattering measurement principles. 
 It can classify particles within PM1.0, PM2.5, PM4 and PM10 categories. 
 
-For further details refer to the official [documentation](https://www.sensirion.com/fileadmin/user_upload/customers/sensirion/Dokumente/9.6_Particulate_Matter/Datasheets/Sensirion_PM_Sensors_Datasheet_SPS30.pdf) of the sensor.
+For further details refer to the official [documentation](https://sensirion.com/media/documents/8600FF88/616542B5/Sensirion_PM_Sensors_Datasheet_SPS30.pdf) of the sensor.
 
 ## Usage
 
